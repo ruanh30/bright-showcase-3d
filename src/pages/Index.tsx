@@ -1,27 +1,27 @@
 import { useState } from "react";
 import ProductPanel from "@/components/ProductPanel";
 import ProductModal from "@/components/ProductModal";
-import headphonesImg from "@/assets/product-headphones.png";
-import speakerImg from "@/assets/product-speaker.png";
+import hoodieImg from "@/assets/product-hoodie.png";
+import sneakerImg from "@/assets/product-sneaker.png";
 
 const products = [
   {
-    name: "Aura Pro",
-    tagline: "Silêncio, redesenhado.",
-    image: headphonesImg,
-    price: "R$ 1.490",
+    name: "Nuvem Hoodie",
+    tagline: "Conforto que abraça.",
+    image: hoodieImg,
+    price: "R$ 389",
     description:
-      "O Aura Pro redefine a experiência auditiva com cancelamento de ruído adaptativo e drivers de 40mm em titânio. Cada detalhe, do couro sintético premium aos acabamentos em cobre, foi pensado para quem não aceita menos que a perfeição.",
-    features: ["ANC Adaptativo", "40h de Bateria", "Bluetooth 5.3", "Hi-Res Audio"],
+      "O Nuvem Hoodie é feito com algodão orgânico 400gsm e modelagem oversized. Cada peça é tingida à mão com pigmentos naturais, garantindo uma tonalidade única. O caimento volumoso e a construção sem costuras laterais criam uma silhueta que é tanto escultural quanto confortável.",
+    features: ["Algodão Orgânico", "Oversized Fit", "Tingimento Natural", "Unissex"],
   },
   {
-    name: "Monolith",
-    tagline: "Som que preenche o vazio.",
-    image: speakerImg,
-    price: "R$ 2.190",
+    name: "Stride One",
+    tagline: "Cada passo, uma declaração.",
+    image: sneakerImg,
+    price: "R$ 649",
     description:
-      "O Monolith é uma coluna de som 360° que transforma qualquer ambiente em uma experiência imersiva. Com tecido acústico Kvadrat e processamento espacial em tempo real, cada nota encontra seu lugar no espaço.",
-    features: ["Som 360°", "Tecido Kvadrat", "Wi-Fi 6E", "Áudio Espacial"],
+      "O Stride One combina couro italiano com solado de borracha reciclada. Design minimalista que transita do casual ao sofisticado. Palmilha em memory foam e forro antibacteriano para conforto durante o dia inteiro.",
+    features: ["Couro Italiano", "Solado Reciclado", "Memory Foam", "Edição Limitada"],
   },
 ];
 
