@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductDrawer from "@/components/ProductDrawer";
-import { ShoppingCart } from "lucide-react";
+import ProductModalCenter from "@/components/ProductModalCenter";
+import { ShoppingCart, PanelRight, Square } from "lucide-react";
 
 import conjunto1 from "@/assets/modelo-conjunto1.jpg";
 import conjunto1b from "@/assets/modelo-conjunto1-b.jpg";
@@ -100,12 +101,15 @@ const allProducts = [
   },
 ];
 
+type LayoutMode = "lateral" | "central";
+
 const Index = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>("central");
 
   const selectedProduct = selectedId ? allProducts.find((p) => p.id === selectedId) : null;
 
-  const drawerProduct = selectedProduct
+  const productData = selectedProduct
     ? {
         ...selectedProduct,
         relatedProducts: allProducts
@@ -144,7 +148,36 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero banner */}
+      {/* Layout mode switcher */}
+      <div className="bg-card border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-center gap-2">
+          <span className="font-body text-xs text-muted-foreground mr-2">Visualização do produto:</span>
+          <button
+            onClick={() => setLayoutMode("central")}
+            className={`flex items-center gap-1.5 font-display text-xs font-semibold px-4 py-2 rounded-lg transition-colors ${
+              layoutMode === "central"
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Square size={14} />
+            Card Central
+          </button>
+          <button
+            onClick={() => setLayoutMode("lateral")}
+            className={`flex items-center gap-1.5 font-display text-xs font-semibold px-4 py-2 rounded-lg transition-colors ${
+              layoutMode === "lateral"
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <PanelRight size={14} />
+            Drawer Lateral
+          </button>
+        </div>
+      </div>
+
+      {/* Hero */}
       <div className="bg-primary/10 py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="font-display font-bold text-foreground text-3xl md:text-4xl">
@@ -207,11 +240,20 @@ const Index = () => {
         </div>
       </main>
 
-      <ProductDrawer
-        isOpen={selectedId !== null}
-        onClose={() => setSelectedId(null)}
-        product={drawerProduct}
-      />
+      {/* Conditional layout */}
+      {layoutMode === "lateral" ? (
+        <ProductDrawer
+          isOpen={selectedId !== null}
+          onClose={() => setSelectedId(null)}
+          product={productData}
+        />
+      ) : (
+        <ProductModalCenter
+          isOpen={selectedId !== null}
+          onClose={() => setSelectedId(null)}
+          product={productData}
+        />
+      )}
     </div>
   );
 };
