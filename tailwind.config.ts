@@ -53,9 +53,6 @@ export default {
         },
         navy: "hsl(var(--navy))",
         magenta: "hsl(var(--magenta))",
-      },
-        bone: "hsl(var(--bone))",
-        charcoal: "hsl(var(--charcoal))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
