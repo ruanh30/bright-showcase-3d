@@ -88,15 +88,6 @@ const ProductModalCenter: FC<ProductModalCenterProps> = ({ isOpen, onClose, prod
             <X size={20} />
           </button>
 
-          {/* Nav */}
-          <div className="bg-secondary text-secondary-foreground px-6 py-3">
-            <div className="flex gap-6 text-xs font-display font-semibold tracking-wide uppercase">
-              <span className="opacity-80 hover:opacity-100 cursor-pointer transition-opacity">Início</span>
-              <span className="opacity-80 hover:opacity-100 cursor-pointer transition-opacity">Vestido</span>
-              <span className="opacity-80 hover:opacity-100 cursor-pointer transition-opacity">Macacão</span>
-              <span className="opacity-80 hover:opacity-100 cursor-pointer transition-opacity">Conjuntos</span>
-            </div>
-          </div>
 
           {/* Content */}
           <div className="p-6 md:p-8">
