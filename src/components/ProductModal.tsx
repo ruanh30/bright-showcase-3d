@@ -102,7 +102,7 @@ const ProductModal: FC<ProductModalProps> = ({ isOpen, onClose, product }) => {
 
             {/* Brand mark */}
             <p className="font-display text-[10px] text-muted-foreground/50 text-right mt-6 tracking-widest uppercase">
-              Estúdio Vazio Pleno
+              Atelier
             </p>
           </div>
         </div>
